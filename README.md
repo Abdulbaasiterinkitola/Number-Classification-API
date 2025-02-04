@@ -12,12 +12,13 @@ This is a public API that takes a number and returns interesting mathematical pr
 1. Clone the repository using: `git clone https://github.com/Abdulbaasiterinkitola/Number-Classification-API`
 2. Change to the project directory using: `cd Number-Classification-API`
 3. Install the required dependencies using: `npm install`
-4. Run the API using: node index.js
-5. create a .env file and specify in it the port you want the server to run on. For example, after using `touch .env` in your terminal to create the .env file, you can specify the port as: PORT = 3000
+4. Create a .env file and specify in it the port you want the server to run on. For example, after using `touch .env` in your terminal to create the .env file, you can specify the port as: PORT = 3000
+5. Run the API using: `node index.js`
+
 
 **To Test the API with Postman:**
 1. Install Postman if you haven't already.
-2. Send a GET request with the URL as http://localhost:3000/api/classify-number={n}:
+2. Send a GET request with the URL as http://localhost:3000/api/classify-number?number={n}:
    - Method: GET
    - URL: http://localhost:3000/api/classify-number?number={n}
    Replace {n} with any number of your choice before sending the GET request.
@@ -54,7 +55,7 @@ This is a public API that takes a number and returns interesting mathematical pr
 
 #### Example Usage:
 
-**Endpoint URL**: https://number-classification-api-pac1.onrender.com/api/classify-number?n=153
+**Endpoint URL**: https://number-classification-api-pac1.onrender.com/api/classify-number?number=153
 
 **Response**:
 ```json
