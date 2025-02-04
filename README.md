@@ -7,8 +7,16 @@ This is a public API that takes a number and returns interesting mathematical pr
 - Fun fact API: http://numbersapi.com/#42
 - https://en.wikipedia.org/wiki/Parity_(mathematics)
 
+## API Overview:
+The API is built using:
+- Node.js (Runtime)
+- Express.js (Web Framework)
+- Axios (To Call the External API)
+- CORS (Cross-Origin Resource Sharing) is enabled
+- **The Fun Fact API in the resources above is used to generate number facts**
+
 ### Setup Instructions:
-**To Run the Project Locally:**
+**To Run the Code Locally:**
 1. Clone the repository using: `git clone https://github.com/Abdulbaasiterinkitola/Number-Classification-API`
 2. Change to the project directory using: `cd Number-Classification-API`
 3. Install the required dependencies using: `npm install`
