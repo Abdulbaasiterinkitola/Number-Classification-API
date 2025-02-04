@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-
+//check for prime number
 function is_prime(n) {
     
     if ((n < 2) || (n % 2 === 0)) {
@@ -28,6 +28,7 @@ function is_prime(n) {
     return true;
 }
 
+//check for perfect number
 function is_perfect(n) {
     if (n < 2) {
         return false
@@ -41,10 +42,12 @@ function is_perfect(n) {
     return sum === n
 }
 
+//check for parity
 function isOddOrEven(n) {
     return n % 2 === 0 ? "even" : "odd"
 }
 
+//check for armstrong number
 function isArmstrong(n) {
     if (n<1) {
         return false
@@ -55,12 +58,21 @@ function isArmstrong(n) {
     return sum === n
 }
 
+//sum of digits
 function digit_sum(n) {
     const digits = String(Math.abs(n))
+    if (n < 0) {
+        const ans = digits
+        .split("")
+        .reduce((acc, digits) => acc + Number(digits), 0)
+        return ans * -1    
+}
     return digits
     .split("")
     .reduce((acc, digits) => acc + Number(digits), 0)}
+    
 
+//getting fun fact
 const getFunFact = async(n) => {
     try {
         const response = await axios.get(`http://numbersapi.com/${n}/math`)
@@ -70,6 +82,7 @@ const getFunFact = async(n) => {
     }
 }
 
+//API endpoint
 app.get("/api/classify-number", async (req, res) => {
     const {n} = req.query
     if ((n === "") || isNaN(n)) {
