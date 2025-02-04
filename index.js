@@ -14,7 +14,7 @@ app.use(cors())
 //check for prime number
 function is_prime(n) {
     
-    if ((n < 2) || (n % 2 === 0)) {
+    if ((n< 2) || ((n > 2) && (n % 2 === 0))) {
         return false
     }
     else if (n = 2) {
@@ -73,9 +73,9 @@ function digit_sum(n) {
     
 
 //getting fun fact
-const getFunFact = async(n) => {
+const getFunFact = async(number) => {
     try {
-        const response = await axios.get(`http://numbersapi.com/${n}/math`)
+        const response = await axios.get(`http://numbersapi.com/${number}/math`)
         return response.data
     } catch (error) {
         return "No fun fact available"
@@ -84,29 +84,29 @@ const getFunFact = async(n) => {
 
 //API endpoint
 app.get("/api/classify-number", async (req, res) => {
-    const {n} = req.query
-    if ((n === "") || isNaN(n)) {
+    const {number} = req.query
+    if ((number === "") || isNaN(number)) {
     return res.status(400).json({
-        number: n || "undefined",
+        number: number || "undefined",
         error: true
     })
 }
 
-const number = Number(n)
+const num = Number(number)
 const properties = []
-if (isArmstrong (number)) {
+if (isArmstrong (num)) {
     properties.push("armstrong")
 }
-properties.push(isOddOrEven(number))
+properties.push(isOddOrEven(num))
 
-const fun_fact = await getFunFact(number)
+const fun_fact = await getFunFact(num)
 
 res.status(200).json({
-    number: number,
-    is_prime: is_prime(number),
-    is_perfect: is_perfect(number),
+    number: num,
+    is_prime: is_prime(num),
+    is_perfect: is_perfect(num),
     properties,
-    digit_sum: digit_sum(number),
+    digit_sum: digit_sum(num),
     fun_fact: fun_fact
 })
 })

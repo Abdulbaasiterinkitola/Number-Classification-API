@@ -14,14 +14,16 @@ This is a public API that takes a number and returns interesting mathematical pr
 
 **To Test the API with Postman:**
 1. Install Postman if you haven't already.
-2. Send a GET request with the URL as http://localhost:3000/api/classify-number:
+2. Send a GET request with the URL as http://localhost:3000/api/classify-number={n}:
    - Method: GET
-   - URL: http://localhost:3000/api/classify-number
+   - URL: http://localhost:3000/api/classify-number?number={n}
+   Replace {n} with any number of your choice before sending the GET request.
 
 
 ## API Documentation
 
-**Endpoint**: GET https://hng-0-fu91.onrender.com/
+**Endpoint**: GET https://number-classification-api-pac1.onrender.com/api/classify-number?number={n}
+   Replace {n} with any number of your choice.
 
 
 ## Response format:
@@ -49,20 +51,20 @@ This is a public API that takes a number and returns interesting mathematical pr
 
 #### Example Usage:
 
-**Endpoint URL**: https://hng-0-fu91.onrender.com/
+**Endpoint URL**: https://number-classification-api-pac1.onrender.com/api/classify-number?n=153
 
 **Response**:
 ```json
 {
-    "number": 153,
-    "is_prime": true,
-    "is_perfect": false,
-    "properties": [
-        "armstrong",
-        "odd"
-    ],
-    "digit_sum": 9,
-    "fun_fact": "153 is a narcissistic number."
+  "number": 153,
+  "is_prime": true,
+  "is_perfect": false,
+  "properties": [
+    "armstrong",
+    "odd"
+  ],
+  "digit_sum": 9,
+  "fun_fact": "153 is a narcissistic number."
 }
 ```
 
@@ -71,4 +73,4 @@ To Hire a Nodejs Developer, use this: https://hng.tech/hire/nodejs-developers
 
 
 ### Deployment
-This API is publicly deployed at: https://hng-0-fu91.onrender.com/
+This API is publicly deployed at: https://number-classification-api-pac1.onrender.com/
